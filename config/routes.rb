@@ -3,5 +3,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-  resources :restaurants
+  resources :restaurants do
+    resources :reviews, only: [:new, :create] # new and create are linked so we can do both at the same time
+  end
 end

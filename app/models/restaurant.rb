@@ -1,5 +1,6 @@
 class Restaurant < ApplicationRecord
-  has_many :reviews, dependent: :destroy
+  has_many :reviews, dependent: :destroy # all the reviews linked to that restaurant will be deleted
+  # allows us to do @restaurant.reviews
 
   validates :address, presence: true
   validates :name, presence: true
